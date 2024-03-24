@@ -10,7 +10,7 @@ import Foundation
 
 /// Used to constrain a query.
 public struct QueryConstraint: ParseTypeable, Hashable {
-    enum Comparator: String, CodingKey, Codable, CaseIterable {
+    public enum Comparator: String, CodingKey, Codable, CaseIterable {
         case lessThan = "$lt"
         case lessThanOrEqualTo = "$lte"
         case greaterThan = "$gt"
@@ -53,7 +53,7 @@ public struct QueryConstraint: ParseTypeable, Hashable {
     var comparator: Comparator?
     var isNull = false
 
-    init(key: String, value: Codable? = nil, comparator: Comparator? = nil, isNull: Bool = false) {
+    public init(key: String, value: Codable? = nil, comparator: Comparator? = nil, isNull: Bool = false) {
         self.key = key
         self.value = AnyCodable(value)
         self.comparator = comparator
