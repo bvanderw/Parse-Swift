@@ -48,9 +48,9 @@ public struct QueryConstraint: ParseTypeable, Hashable {
         case score = "$score"
     }
 
-    var key: String
-    var value: AnyCodable?
-    var comparator: Comparator?
+    public var key: String
+    public var value: AnyCodable?
+    public var comparator: Comparator?
     var isNull = false
 
     public init(key: String, value: Codable? = nil, comparator: Comparator? = nil, isNull: Bool = false) {
